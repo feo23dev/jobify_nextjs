@@ -9,6 +9,7 @@ import {
 import { Button } from "./ui/button";
 import { AlignLeft } from "lucide-react";
 import { Links } from "@/utils/links";
+import Link from "next/link";
 
 const LinksDropdown = () => {
   return (
