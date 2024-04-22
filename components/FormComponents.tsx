@@ -18,7 +18,14 @@ import { Input } from "./ui/input";
 
 type CustomFormFieldProps = {
   name: string;
-  control: Control;
+  control: Control<any>;
+};
+
+type CustomFormSelectProps = {
+  name: string;
+  control: Control<any>;
+  items: string[];
+  labelText?: string;
 };
 
 export function CustomFormField({ name, control }: CustomFormFieldProps) {
@@ -38,13 +45,6 @@ export function CustomFormField({ name, control }: CustomFormFieldProps) {
     />
   );
 }
-
-type CustomFormSelectProps = {
-  name: string;
-  control: Control;
-  items: string[];
-  labelText?: string;
-};
 
 export function CustomFormSelect({
   name,
@@ -76,11 +76,10 @@ export function CustomFormSelect({
                 })}
               </SelectContent>
             </Select>
-
             <FormMessage />
           </FormItem>
         );
       }}
-    ></FormField>
+    />
   );
 }
