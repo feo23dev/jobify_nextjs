@@ -21,13 +21,6 @@ type CustomFormFieldProps = {
   control: Control<any>;
 };
 
-type CustomFormSelectProps = {
-  name: string;
-  control: Control<any>;
-  items: string[];
-  labelText?: string;
-};
-
 export function CustomFormField({ name, control }: CustomFormFieldProps) {
   return (
     <FormField
@@ -46,6 +39,13 @@ export function CustomFormField({ name, control }: CustomFormFieldProps) {
   );
 }
 
+type CustomFormSelectProps = {
+  name: string;
+  control: Control<any>;
+  items: string[];
+  labelText?: string;
+};
+
 export function CustomFormSelect({
   name,
   control,
@@ -63,8 +63,8 @@ export function CustomFormSelect({
             <Select onValueChange={field.onChange} defaultValue={field.value}>
               <FormControl>
                 <SelectTrigger>
-                  <SelectValue>{field.value}</SelectValue>{" "}
-                </SelectTrigger>{" "}
+                  <SelectValue>{field.value}</SelectValue>
+                </SelectTrigger>
               </FormControl>
               <SelectContent>
                 {items.map((item) => {
